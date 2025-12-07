@@ -3,7 +3,6 @@ library(readxl)
 library(dplyr)
 library(highcharter)
 
-
 kat <- read_excel(
   file.choose(),col_names = FALSE
 )
@@ -49,10 +48,9 @@ hc <- hchart(
   hc_exporting(enabled = TRUE) %>%      # PNG / SVG / pdf vs. export tuşu
   hc_add_theme(hc_theme_flat())       
 
-
 hc
 
-
 htmlwidgets::saveWidget(hc, "sankey_interaktif.html", selfcontained = TRUE)
+
 
 
